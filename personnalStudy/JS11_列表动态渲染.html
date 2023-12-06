@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul></ul>
+		<script>
+			// 描述
+			// 请补全JavaScript代码，将预设代码中的"people"数组渲染在页面中。实现下面的列表：
+			// 牛油1号 20岁
+			// 牛油2号 21岁
+			// 牛油3号 19岁
+			var people = [{
+					name: '牛油1号',
+					id: 1,
+					age: 20
+				},
+				{
+					name: '牛油2号',
+					id: 2,
+					age: 21
+				},
+				{
+					name: '牛油3号',
+					id: 3,
+					age: 19
+				},
+			]
+			var ul = document.querySelector('ul');
+			// 补全代码
+			const _listRendering = arr => {
+			    var str = ''
+			    arr.forEach(element => {
+			        str += `<span>${element.name} ${element.age}岁</span></br>`
+			    })
+			    ul.innerHTML = str
+			}
+			_listRendering(people);
+		</script>
+	</body>
+</html>

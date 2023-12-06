@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// 描述
+			// 请补全JavaScript代码，要求将数组参数中的多维数组扩展为一维数组并返回该数组。
+			// 注意：
+			// 1. 数组参数中仅包含数组类型和数字类型
+			// 示例1
+			// 输入：
+			// [1,[2,[3,[4]]]]
+			// 输出：
+			// [1,2,3,4]
+			function flatten(arr){
+			    // toString() + split() 实现   
+			    return arr.toString().split(',').map(item => Number(item));
+			
+			    // reduce 实现
+			    // return arr.reduce((target, item) => {
+			    //     return target.concat(Array.isArray(item) ? flatten(item) : item);
+			    // }, [])
+			
+			    // join() + split() 实现
+			    // return arr.join(',').split(',').map(item => Number(item));
+			
+			    // 递归实现
+			    // let res = [];
+			    // arr.forEach(item => {
+			    //     if (Array.isArray(item)) {
+			    //         res = res.concat(flatten(item))
+			    //     } else {
+			    //         res.push(item);
+			    //     }
+			    // });
+			    // return res;
+			
+			    // 扩展运算符实现
+			    // while(arr.some(item => Array.isArray(item))){
+			    //     arr = [].concat(...arr);
+			    // }
+			    // return arr;
+			
+			    // flat()实现（这里不支持使用）
+			    // return arr.flat(Infinity);
+			}
+		</script>
+	</body>
+</html>

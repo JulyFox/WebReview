@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// 描述
+			// 请补全JavaScript代码，要求将数组参数中的对象以总成绩(包括属性"chinese"、"math"、"english")从高到低进行排序并返回。
+			const _rank = array => {
+				// 补全代码
+				for(let i = 0; i < array.length; i++){
+					let maxData = array[i].chinese + array[i].math + array[i].english;
+					for(let j = i; j < array.length; j++){
+						let sum = array[j].chinese + array[j].math + array[j].english;
+						if(sum > maxData){
+							let tmp = array[i];
+							array[i] = array[j];
+							array[j] = tmp;
+						}
+					}
+				}
+				return array;
+			}
+			
+			
+			// 方法二
+			const _rank1 = array => {
+			    array.sort((left, right) => {
+			        let lg = left.chinese + left.math + left.english
+			        let rg = right.chinese + right.math + right.english
+			        return rg - lg
+			    })
+			    return array
+			}
+
+			
+		</script>
+	</body>
+</html>

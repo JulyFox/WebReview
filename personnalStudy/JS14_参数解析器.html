@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// 描述
+			// 请补全JavaScript代码，要求将字符串参数URL中的参数解析并以对象的形式返回。
+			// 示例1
+			// 输入：
+			// getParams('https://nowcoder.com/online?id=1&salas=1000')
+			// 输出：
+			// {id:1, salas: 100}
+			const _getParams = (url) => {
+				// 补全代码
+				let jsonData = [];
+				jsonData = url.split('?');
+				let params = jsonData.length > 0 ? jsonData[1].split('&') : [];
+				let data = {};
+				params.forEach(ele => {
+					let param = ele.split('=');
+					data[param[0]] = param[1];	
+				})
+				return data;
+			}
+			
+			_getParams('https://nowcoder.com/online?id=1&salas=1000');
+		</script>
+	</body>
+</html>

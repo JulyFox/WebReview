@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<select name="" id="" onchange="selectChange(this.value)">
+			<option value="0"> 请选择销量范围 </option>
+			<option value="1"> & lt100 </option>
+			<option value="2"> 100~500 </option>
+			<option value="3"> & gt500 </option>
+		</select>
+		<ul>
+			<li>牛客logo马克杯</li>
+			<li>无盖星空杯</li>
+			<li>老式茶杯</li>
+			<li>欧式印花杯</li>
+		</ul>
+		<script>
+			// 描述
+			// 请补全JavaScript代码，要求根据下拉框选中的条件变换重新渲染列表中展示的商品，且只展示符合条件的商品。
+			// 注意：
+			// 1. 必须使用DOM0级标准事件（onchange）
+			// 2. 建议使用ES6的filter方法
+			var cups = [{
+					type: 1,
+					price: 100,
+					color: 'black',
+					sales: 60,
+					name: '牛客logo马克杯'
+				},
+				{
+					type: 2,
+					price: 40,
+					color: 'blue',
+					sales: 100,
+					name: '无盖星空杯'
+				},
+				{
+					type: 4,
+					price: 60,
+					color: 'green',
+					sales: 200,
+					name: '老式茶杯'
+				},
+				{
+					type: 3,
+					price: 50,
+					color: 'green',
+					sales: 600,
+					name: '欧式印花杯'
+				}
+			]
+			var select = document.querySelector('select');
+			var ul = document.querySelector('ul');
+			// 补全代码
+			function selectChange(event) {
+				let result = [];
+				if(event == 1){
+					result = cups.filter(ele => {return ele.sales < 100});
+				}else if(event == 2){
+					result = cups.filter(ele => {return ele.sales >= 100 && ele.sales <= 500 });
+				}else if(event == 3){
+					result = cups.filter(ele => {return ele.sales > 500});
+				}
+				render(result);
+			}
+			
+			function render(arr){
+				let str = ''
+				arr.forEach(element => {
+				    str += `<li>${element.name}</li>`
+				})
+				ul.innerHTML = str;
+			}
+		</script>
+	</body> 
+</html >

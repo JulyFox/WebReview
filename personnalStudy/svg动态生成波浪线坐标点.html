@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.demo {
+			width: 100%;
+			height: 100%;
+		}
+		/* .demo svg {
+			width: 100%;
+			height: 100%;
+		} */
+	</style>
+	<body>
+		<div class="demo">
+			<svg xmlns="http://www.w3.org/2000/svg" style="height: 900px;">
+				<g fill="none" stroke="black" stroke-width="4" id="mysvg">
+					<!-- <polyline points="140 140,150 130,160 140,160 140,170 130,180 140" stroke="#04f" stroke-width="3" />
+						<polyline points="140 150,150 140,160 150,160 150,170 140,180 150" stroke="#04f" stroke-width="3" /> -->
+				</g>
+			</svg>
+		</div>
+		<script type="text/javascript">
+			let data1 = {
+				x: 140,
+				y: 140,
+				width: 400,
+				height: 300
+			};
+			let data2 = JSON.parse(JSON.stringify(data1));
+			data2.y -= 4;
+			let data3 = JSON.parse(JSON.stringify(data1));
+			data3.x -= 4;
+
+			function createWavyLineX(data) {
+				//y坐标的规律：3n+2 (n:0,1,2,3......)
+				//x坐标的规律：3n+1 (n:0,1,2,3......)
+				let maxX = this.accAdd(data.x, data.width);
+				let calculator = 1;
+				let updateX = data.x;
+				let updateY = data.y;
+				let points = '';
+				while (updateX < maxX) {
+					if(calculator % 3 !== 1){
+						updateX += 4;
+					}
+					// updateX = calculator % 3 !== 1 ? updateX+10 : updateX;
+					if (calculator % 3 === 2) {
+						updateY = data.y - 4;
+					} else {
+						updateY = data.y;
+					}
+					if(updateX < maxX){
+						points += updateX + ',' + updateY + ' ';
+					}else{
+						points += updateX + ',' + updateY;
+					}
+					calculator++;
+				}
+				return points;
+			}
+			
+			
+			function createWavyLineY(data) {
+				//y坐标的规律：3n+2 (n:0,1,2,3......)
+				//x坐标的规律：3n+1 (n:0,1,2,3......)
+				let maxY = this.accAdd(data.y, data.height);
+				let calculator = 1;
+				let updateX = data.x;
+				let updateY = data.y;
+				let points = '';
+				while (updateY < maxY) {
+					if(calculator % 3 !== 1){
+						updateY += 4;
+					}
+					// updateX = calculator % 3 !== 1 ? updateX+10 : updateX;
+					if (calculator % 3 === 2) {
+						updateX = data.x + 4;
+					} else {
+						updateX = data.x;
+					}
+					if(updateY < maxY){
+						points += updateX + ',' + updateY + ' ';
+					}else{
+						points += updateX + ',' + updateY;
+					}
+					calculator++;
+				}
+				return points;
+			}
+			
+
+			function accAdd(arg1, arg2) {
+				let r1, r2, m;
+				try {
+					r1 = arg1.toString().split(".")[1].length
+				} catch (e) {
+					r1 = 0
+				}
+				try {
+					r2 = arg2.toString().split(".")[1].length
+				} catch (e) {
+					r2 = 0
+				}
+				m = Math.pow(10, Math.max(r1, r2))
+				return (arg1 * m + arg2 * m) / m
+			}
+
+			function wavyLineSvg(points) {
+				let mySvg = document.querySelector("#mysvg")
+				let polyLine = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+				polyLine.setAttributeNS(null,"points",points);
+				polyLine.setAttributeNS(null, "stroke", "#000");
+				polyLine.setAttributeNS(null, "stroke-width", '1');
+				mySvg.appendChild(polyLine);
+			}
+			let pointsup = this.createWavyLineX(data1);
+			let pointsdown = this.createWavyLineX(data2);
+			let pointsleft = this.createWavyLineY(data1);
+			let pointsright = this.createWavyLineY(data3);
+			console.log(pointsleft);
+			this.wavyLineSvg(pointsup);
+			this.wavyLineSvg(pointsdown);
+			this.wavyLineSvg(pointsleft);
+			this.wavyLineSvg(pointsright)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// 描述
+			// 请补全JavaScript代码，要求每次调用函数"closure"时会返回一个新计数器。每当调用某个计数器时会返回一个数字且该数字会累加1。
+			// 注意：
+			// 1. 初次调用返回值为1
+			// 2. 每个计数器所统计的数字是独立的
+
+			// 此处考察的是闭包  closure没用被销毁，
+			// 因为它return的函数被赋给了timer，
+			// 只要timer不被销毁，
+			// closure就一直不被销毁，
+			// 里面的num也会一直存在
+			const closure = () => {
+				// 补全代码
+				let num = 0;
+				return () => ++num;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// 描述
+			// 请补全JavaScript代码，要求以Boolean的形式返回字符串参数是否符合身份证标准。
+			// 注意：
+			// 1. 无需考虑地区信息、出生日期、顺序码与校验码的验证
+
+			function _isCard(str) {
+				let cardArr = str.split('');
+				if (cardArr.length != 18) {
+					return false;
+				}
+				cardArr.forEach((ele, index) => {
+					if (index < 17 && (ele < 0 || ele > 9)) {
+						return false;
+					}
+					if (index == 17 && (ele < 0 || ele > 9 || ele != 'x' || ele != 'X')) {
+						return false;
+					}
+					return true;
+				})
+			}
+			let bool = _isCard('21062319980907888X');
+			console.log(bool);
+		</script>
+	</body>
+</html>
