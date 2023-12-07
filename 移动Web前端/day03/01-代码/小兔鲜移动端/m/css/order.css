@@ -1,0 +1,248 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(247, 247, 248);
+}
+
+/* 整体盒子样式 */
+.main>div {
+    border-radius: 5px;
+    margin: 0px 10px 10px 10px;
+    /* padding: 10px; */
+    background-color: #fff;
+}
+
+/* .main>div:last-child {
+    margin: 0;
+} */
+
+.main>div:first-child {
+    margin-top: 10px;
+}
+
+/* 用户 */
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 10px 10px;
+}
+
+.info p {
+    line-height: 18px;
+}
+
+.info p span {
+    font-size: 15px;
+}
+
+.info p:nth-child(1) {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.address-logo {
+    width: 30px;
+    height: 30px;
+    background-image: linear-gradient(90deg,
+            #6fc2aa 5%,
+            #54b196 100%);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+}
+
+.more {
+    width: 44px;
+    height: 44px;
+    padding-right: 0px;
+    text-align: center;
+    line-height: 44px;
+    color: #808080;
+}
+
+.info {
+    margin-left: 12px;
+    flex: 1;
+    font-size: 12px;
+}
+
+/* 商品 */
+.goods {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.pic img{
+    width: 85px;
+    height: 85px;
+}
+
+.goods-info {
+
+    font-size: 13px;
+    padding-top: 7px;
+    margin-left: 10px;
+}
+
+.goods-info h4,.goods-info p {
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.color {
+    display: inline-block;
+    background-color: rgb(247,247,247);
+    color: rgb(196,196,196);
+    height: 16px;
+    line-height: 16px;
+    font-size: 11px;
+    padding: 0 5px;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-size: 12px;
+}
+
+.price span {
+    color: #cf4444;
+    margin-right: 12px;
+}
+
+.price em {
+    font-size: 16px;
+    font-style: normal;
+}
+
+.price del {
+    color: #999;
+}
+
+.goods-num {
+    width: 45px; 
+    line-height: 55px;
+    text-align: right;
+}
+
+/* 配送快递 */
+.express {
+    padding: 13px;
+    font-size: 13px;
+}
+
+.express-top,.express-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.express-center {
+    display: flex;
+    justify-content: flex-start;
+    margin: 30px 0px;
+}
+
+.express-center p:first-child {
+    width: 52px;
+}
+
+.express-center p:last-child {
+    flex: 1;
+    margin-left: 12px;
+    font-size: 12px;
+    color: rgb(152,152,152);
+    text-align: left;
+}
+
+.express-bottom p:last-child i {
+    color: rgb(128,128,128);
+    font-size: 13px;
+}
+
+/* 商品优惠折扣 */
+.discount {
+    padding: 13px;
+    font-size: 13px; 
+}
+
+.discount em {
+    font-style: normal;
+}
+
+.discount>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.discount .transport-price {
+    margin: 30px 0px;
+}
+
+.discount-price p:last-child{
+    color: rgb(207,68,68);
+}
+
+
+/* 底部付款 */
+.pay-order {
+    display: flex;
+    /* 主轴对齐方式 */
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    padding: 0 10px;
+    background-color: #fff;
+}
+
+.pay-btn a {
+    display: block;
+    margin-top: 22px;
+    width: 90px;
+    height: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 3px 3px 3px 3px;
+    background-image: linear-gradient(90deg, rgb(111, 194, 170), rgb(84, 177, 150));
+}
+
+.pay-dollor {
+    font-size: 12px;
+    line-height: 76px;
+}
+
+.pay-dollor em {
+    font-size: 18px;
+    color: rgb(207, 68, 68);
+    font-weight: 700;
+}
+
+.pay-dollor span {
+    color: rgb(207, 68, 68);
+}
+
+/* 弹框样式 */
+.pop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(127 127 127 / 32%);
+    z-index: 10;
+}
+
+
