@@ -1,0 +1,159 @@
+body {
+    background-color: #f6f6f6;
+}
+
+.center {
+    display: flex;
+    /* 主轴对齐 */
+    justify-content: space-between;
+    width: 1240px;
+    margin: 30px auto 85px;
+}
+
+.aside {
+    width: 227px;
+    background-color: #ffffff;
+}
+
+.main {
+    width: 999px;
+    /* background-color: #ffffff; */
+}
+
+.profile-photo {
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 47px 0 32px 0;
+}
+
+.profile-photo .photo {
+    overflow: hidden;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+}
+
+.photo img {
+    width: 85px;
+    height: 85px;
+}
+
+.profile-photo h4 {
+    font-size: 18px;
+    color: #333333;
+}
+
+.profile-photo p {
+    width: 93px;
+    height: 26px;
+    line-height: 26px;
+    background-image: linear-gradient(264deg,
+            #e05e2f 0%,
+            #ea745e 95%);
+    border-radius: 13px;
+    font-size: 14px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.profile-photo i {
+    display: inline-block;
+    width: 15px;
+    height: 17px;
+    vertical-align: middle;
+    background: url(../images/vip_gold.png) no-repeat;
+    background-size: 15px 15px;
+}
+
+.aside-menu {
+    border-top: 1px solid #f4f4f4;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.aside-menu h4 {
+    height: 35px;
+    font-size: 18px;
+    font-weight: normal;
+    padding-left: 50px;
+}
+
+.links a {
+    display: block;
+    position: relative;
+    padding-left: 50px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 14px;
+    color: #666666;
+}
+
+.links a::before {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 35px;
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: #5cb99e;
+    border-radius: 50%;
+}
+
+.links a:hover {
+    color: #5cb99e;
+}
+
+.links a:hover::before {
+    display: block;
+}
+
+.main-menu {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+.main-menu>div {
+    flex: 1;
+    margin: 20px 0;
+    height: 90px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main-menu-left {
+    border-right: 1px solid #f4f4f4;
+}
+
+.main-menu-left div {
+    flex: 1;
+}
+
+.main-menu-right div {
+    flex: 1;
+}
+
+.main-menu-left a ,.main-menu-right a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-menu-left span:first-child {
+    display: inline-block;
+    width: 25px;
+    height: 22px;
+    background: url(../images/vip.png) no-repeat;
+    background-size: 25px 22px;
+    margin-bottom: 10px;
+}
+
+.main-menu-right a em {
+    font-size: 25px;
+    color: #e05e2f;
+}
