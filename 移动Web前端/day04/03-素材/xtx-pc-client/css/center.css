@@ -138,7 +138,8 @@ body {
     flex: 1;
 }
 
-.main-menu-left a ,.main-menu-right a{
+.main-menu-left a,
+.main-menu-right a {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,4 +157,69 @@ body {
 .main-menu-right a em {
     font-size: 25px;
     color: #e05e2f;
+}
+
+.main .list {
+    margin-top: 20px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.list .list-head {
+    height: 70px;
+    line-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.list-title {
+    font-size: 22px;
+    color: #333333;
+}
+
+.list-detail {
+    height: 16px;
+    line-height: 16px;
+    font-size: 16px;
+    color: #999999;
+}
+
+.list .list-content {
+    padding-bottom: 20px;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-item {
+    padding-top: 20px;
+}
+
+.list-item div {
+    width: 160px;
+    height: 160px;
+}
+
+.list-item p {
+    margin-top: 16px;
+    margin-bottom: 6px;
+    width: 180px;
+    font-size: 16px;
+    color: #333333;
+}
+
+.list-item span {
+    color: #9a2e1f;
+    font-size: 22px;
+}
+
+
+.list-item div img {
+    width: 160px;
+    height: 160px;
 }
