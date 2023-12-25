@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //深拷贝和浅拷贝只针对Array和Object这种引用类型
+
+
+        //深拷贝开辟一个新的栈，两个对象属性完全相同，但对应两个不同的地址，修改一个对象的属性，并不会修改另一个对象的属性
+
+
+
+
+
+
+
+
+        function deepClone(obj, hash = new WeakMap()) {
+            if (obj === null) return obj; // typeof null => object  所有单独处理
+            if (obj instanceof Date) return new Date(obj);
+            if (obj instanceof RegExp) return new RegExp(obj);
+            // 基本类型或是函数 深拷贝结束
+            if (typeof obj !== "object") return obj;
+            // 是对象的话就要进行深拷贝
+            if (hash.get(obj)) {
+                return hash.get(obj);
+            }
+            let cloneObj = new obj.constructor();
+            // 找到的是所属类原型上的constructor,而原型上的 constructor指向的是当前类本身
+            hash.set(obj, cloneObj);
+            for (let key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    // 实现一个递归拷贝
+                    cloneObj[key] = deepClone(obj[key], hash);
+                }
+            }
+            return cloneObj;
+        }
+
+
+        let data = {
+            name: 'xxxxx',
+            age: 10,
+            c: {
+                sex: 'nv',
+                weight: 50
+            }
+        };
+
+        let test = new WeakMap();
+        console.log(test.get(data));
+
+        let data2;
+        // let copydata = deepClone(data);
+        // console.log(copydata);
+        console.log(deepClone(data2));
+
+    </script>
+</body>
+
+</html>
